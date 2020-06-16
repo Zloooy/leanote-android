@@ -23,6 +23,7 @@ import org.houxg.leamonax.ui.edit.EditorFragment;
 import org.houxg.leamonax.ui.edit.NoteEditActivity;
 import org.houxg.leamonax.utils.DialogDisplayer;
 import org.houxg.leamonax.utils.NetworkUtils;
+import org.houxg.leamonax.utils.SharedPreferenceUtils;
 import org.houxg.leamonax.utils.ToastUtils;
 
 import butterknife.BindView;
@@ -81,6 +82,7 @@ public class NotePreviewActivity extends BaseActivity implements EditorFragment.
         getMenuInflater().inflate(R.menu.preview, menu);
         menu.findItem(R.id.action_print).setVisible(BuildConfig.DEBUG);
         menu.findItem(R.id.action_get).setVisible(BuildConfig.DEBUG);
+        menu.findItem(R.id.action_rotate).setVisible(SharedPreferenceUtils.read(SharedPreferenceUtils.CONFIG, getString(R.string.rotate_button), false));
         return super.onCreateOptionsMenu(menu);
     }
 

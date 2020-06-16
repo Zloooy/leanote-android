@@ -1,6 +1,6 @@
-# New Leanote Android (Leamonax)
+# Zloooy's fork of New Leanote Android (Leamonax)
 
-[![Build Status](https://travis-ci.org/leanote/leanote-android.svg?branch=master)](https://travis-ci.org/leanote/leanote-android?branch=master)
+Original Master [![Build Status](https://travis-ci.org/leanote/leanote-android.svg?branch=master)](https://travis-ci.org/leanote/leanote-android?branch=master)
 
 **It's still in developing.** Be careful when you using it and make sure you have an backup.
 
@@ -13,7 +13,7 @@
 <img src="screenshot/Markdown.png" alt="Markdown" width="250" height="446">&ensp; &ensp;<img src="screenshot/Search.png" alt="Search" width="250" height="446">&ensp; &ensp;<img src="screenshot/AppWidget.png" alt="AppWidget" width="250" height="446"> <br>
 
 
-# Download
+# Download original client
 - [Git Release](https://github.com/leanote/leanote-android/releases/latest)
 - [Pgyer](https://www.pgyer.com/Leanote)
 
@@ -29,6 +29,19 @@
 # TODO
 - [ ] Searching for full-text fields
 
+# Fork features
+- [x] Rotatable interface
+
+# Fork TODO
+- [ ] Optional split view  in edit mode like in the desktop client
+- [ ] Managing buttons in edit mode: enabling/hiding, reordering
+- [ ] Keybindings for actions in edit mode
+- [ ] Managing custom hosts: saving for reuse, deleting
+- [ ] Note export to txt, pdf, leanote formats
+- [ ] Account migration to other host
+- [ ] Vi/Emacs mode in editor
+- [ ] Integrated markdown manual
+
 # Contributors
 
 - [houxg](https://github.com/houxg)
@@ -36,3 +49,4 @@
 - [nicacol](https://github.com/nicacol)
 - [Ericwyn](https://github.com/Ericwyn)
 - [binsheng](https://github.com/binsheng)
+- [Zloooy](https://github.com/Zloooy)

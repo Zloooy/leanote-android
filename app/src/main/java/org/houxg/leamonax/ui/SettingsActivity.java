@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 import rx.Observable;
 import rx.Observer;
@@ -64,6 +66,8 @@ public class SettingsActivity extends BaseActivity {
     @BindView(R.id.ll_fts_rebuild)
     View mFtsRebuildLayout;
     private ProgressDialog mDialog;
+    @BindView(R.id.rotate_button_switch)
+    SwitchCompat mRotateSwitch;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -72,6 +76,7 @@ public class SettingsActivity extends BaseActivity {
         initToolBar((Toolbar) findViewById(R.id.toolbar), true);
         ButterKnife.bind(this);
         refresh();
+        mRotateSwitch.setChecked(SharedPreferenceUtils.read(SharedPreferenceUtils.CONFIG, getString(R.string.rotate_button), false));
         mClearDataView.setVisibility(BuildConfig.DEBUG ? View.VISIBLE : View.GONE);
     }
 
@@ -233,6 +238,13 @@ public class SettingsActivity extends BaseActivity {
                 })
                 .show();
     }
+
+    @OnCheckedChanged(R.id.rotate_button_switch)
+    void onCheckedChanged(SwitchCompat swit, boolean isChecked)
+    {
+        SharedPreferenceUtils.write(SharedPreferenceUtils.CONFIG, getString(R.string.rotate_button), isChecked);
+    }
+
 
     private void clearData() {
         Observable.create(
